@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
+    <title>Loot & Boom: A PUBG Mad Libs Adventure</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="/assets/pubg-favicon.png" />
+  </head>
+  <body>
+    <video id="backgroundVideo" playsinline loop>
+      <source src="assets/OnMyWay.mp4" type="video/mp4" />
+    </video>
+    <div class="header">
+      <img
+        class="logo"
+        src="assets/pubg-logo-icon-white.png"
+        width="150px"
+        height="75px"
+        alt="PUBG Logo"
+      />
+      <h1 class="fancytitle">Loot and Boom</h1>
+      <p class="subheading">A PUBG Mad Libs Adventure</p>
+    </div>
+    <div class="container">
+      <div class="madLibsEdit">
+        <h1 class="intro">Craft Your Story</h1>
+        <p id="edit">As the plane roars overhead, click the blanks in the story below to
+          fill them with your chosen loot. Watch your hilarious PUBG tale
+          unfold!
+        </p><br>
+      </div>
+      <div class="madLibsPreview" id="story">
+        <h1 class="outro" id="preview">The Battleground</h1>
+      </div>
+    </div>
+    <div class="beforefooter">
+      <button class="button" id="reset">Reset</button>
+      <button class="button" id="play">Play</button>
+      <button class="button" id="stop">Stop</button>
+      <button class="button" id="google_translate_element"></button>
+    </div>
+    <footer class="footer">
+      <div class="div-footer">
+        <p>Created by <a href="https://pubg-madibs.mydt.site">Mthokozisi Dhlamini</a> for <a href="https://www.re-coded.com">Re:Coded</a><br><a class="credits" href="/credits.html">Credits</a>
+        </p>
+      </div>
+    </footer>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script src="do-not-touch.js"></script>
+  <script src="madlibs.js"></script>
+</body>
+</html>
