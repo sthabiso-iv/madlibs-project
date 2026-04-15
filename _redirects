@@ -1,3 +1,0 @@
-# Netlify clean-URL rewrites (200 = rewrite, URL stays the same)
-/madlibs    /madlibs.html    200
-/credits    /credits.html    200
