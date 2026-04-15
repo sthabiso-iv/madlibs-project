@@ -40,7 +40,7 @@ body {
 body.index {
     background: url(assets/banner-pubg.png);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     background-color: #555;
     background-blend-mode: overlay;
