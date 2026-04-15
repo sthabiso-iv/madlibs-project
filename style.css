@@ -22,7 +22,9 @@ body {
     background-blend-mode: overlay;
     margin: 0;
     padding: 0;
-    min-height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 #backgroundVideo {
@@ -121,7 +123,7 @@ footer {
     text-align: center;
     padding: 20px;
     border-width: 0px;
-    margin-top: 10px;
+    margin-top: auto;
 }
 
 .footer {
@@ -385,3 +387,133 @@ img {
         max-width: 100px;
     }
 }
+
+/* ── Credits page ── */
+.credits-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px 20px;
+    flex: 1;
+}
+
+.credits-heading {
+    font-family: 'Headliner No. 45';
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 3px;
+    color: var(--yellow-col);
+    text-align: center;
+    margin: 0 0 30px;
+    cursor: default;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.credits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    max-width: 960px;
+    width: 100%;
+}
+
+/* Liquid glass card */
+.credit-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    padding: 32px 24px;
+    text-align: center;
+    color: var(--white-col);
+
+    /* glass base */
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.18) 0%,
+        rgba(255, 255, 255, 0.06) 100%
+    );
+    backdrop-filter: blur(28px) saturate(200%) brightness(1.05);
+    -webkit-backdrop-filter: blur(28px) saturate(200%) brightness(1.05);
+
+    /* border & depth */
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.55),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* top-edge sheen */
+.credit-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.22) 0%,
+        transparent 45%
+    );
+    pointer-events: none;
+}
+
+/* liquid ripple blob */
+.credit-card::after {
+    content: '';
+    position: absolute;
+    width: 160%;
+    height: 100px;
+    top: -30px;
+    left: -30%;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    filter: blur(12px);
+    pointer-events: none;
+}
+
+.credit-card:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 16px 48px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.55),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+}
+
+.credit-card h3 {
+    font-family: 'Headliner No. 45';
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    color: var(--yellow-col);
+    text-transform: uppercase;
+    margin: 0 0 14px;
+    cursor: default;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.credit-card p {
+    margin: 6px 0;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.credit-card a {
+    color: var(--yellow-col);
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.credit-card a:hover {
+    color: #fff;
+    text-shadow: 0 0 8px rgba(242, 170, 0, 0.8);
+}
+
+@media only screen and (max-width: 600px) {
+    .credits-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+}
+
